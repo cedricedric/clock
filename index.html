@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="HEPL" />
+
+	<link rel="stylesheet" type="text/css"
+		href="./css/screenmin.css" media="screen" />
+
+	<title>Clock - 00H00M00S (Alarm : 00h00m00s)</title>
+</head>
+<body>
+	<header>
+		<h1>My clock is always on time !</h1>
+	</header>
+	<section>
+		<h2>Commands</h2>
+		<div id="clock">
+			<div id="hours"></div>
+			<div id="minutes"></div>
+			<div id="seconds"></div>
+			<div id="wakeUp"></div>
+			<p id="clockAmPm">
+				AM
+			</p>
+			<p id="alarmAmPm">
+				(AM Alarm)
+			</p>
+		</div>
+		<div id="glass">
+		</div>
+		<form id="commands" name="commands" method="post" action="#">
+			<fieldset><legend>Style</legend>
+			<div>
+				<label for="comics">
+					<input type="checkbox" name="comics" id="comics" value="comics" /> Comics'style clock
+				</label>
+			</div>
+			</fieldset> <!--Style-->
+			<fieldset><legend>Clock speed</legend>
+			<div class="alignMid">
+				<label for="clockSpeed">
+					slower<input type="range" name="clockSpeed" id="clockSpeed" value="6" min="1" max="11" />faster
+				</label>
+			</div>
+			</fieldset> <!--Clock speed-->
+			<fieldset><legend>Pause/Start/Reset</legend>
+			<div>
+					<a href="#" title="pause clock" id="pause">Pause</a><a  href="#" title="play clock" id="play">Play</a><a  href="#" title="reset clock" id="reset">Reset</a>
+			</div>
+			</fieldset> <!--Commands-->
+			<fieldset><legend>Adjustable digital clock</legend>
+			<div class="maxwidth" id="setClock">
+				<span class="viewTime">View/change time clock<sup class="notice" title="please focus out the field to validate your change !">*</sup>&nbsp;:</span>
+				<label for="hour"><input type="number" name="hour" id="hour" min="0" max="23" step="1" value="0" title="give focus to set the hours" />h</label>
+				<label for="min"><input type="number" name="min" id="min" min="0" max="59" step="1" value="0" title="give focus to set the minutes" />m</label>
+				<label for="sec"><input type="number" name="sec" id="sec" min="0" max="59" step="1" value="0" title="give focus to set the seconds" />s</label>
+			</div>
+			</fieldset> <!--Adjustable digital clock-->
+			<fieldset class="multirow"><legend>Adjustable alarm</legend>
+				<div class="maxwidth" id="setAlarm">
+					<span class="viewTime">Set alarm<sup class="notice" title="please focus out the field to validate your change !">*</sup>&nbsp;:</span>
+					<label for="alarmHour"><input type="number" name="alarmHour" id="alarmHour" min="0" max="23" step="1" value="0" title="give focus to set the alarm's hours" />h</label>
+					<label for="alarmMin"><input type="number" name="alarmMin" id="alarmMin" min="0" max="59" step="1" value="0" title="give focus to set the alarm's minutes" />m</label>
+					<label for="alarmSec"><input type="number" name="alarmSec" id="alarmSec" min="0" max="59" step="1" value="0" title="give focus to set the alarm's seconds" />s</label>
+				</div>
+				<div class="rows" id="defAlarmSound">
+					<label for="selDefAlarmSound">
+						Default alarm sound (or personal one)&nbsp;:
+						<select name="selDefAlarmSound" id="selDefAlarmSound" title="select a default sound for the alarm or choose a personal one">
+							<option value="alarm1.mp3">Cats</option>
+							<option value="alarm2.mp3">Dogs</option>
+							<option value="alarm3.mp3">Rooster</option>
+							<option value="personal">other (personal sound)</option>
+						</select>
+					</label>
+				</div>
+				<div class="rows disabled" id="persAlarmSound">
+					<label for="fiPersAlarmSound">
+						Personal alarm sound (must be in the &laquo;&nbsp;sounds&nbsp;&raquo; directory)&nbsp;:
+						<input type="file" name="fiPersAlarmSound" id="fiPersAlarmSound" title="choose an mp3, ogg or wav file as a sound for the alarm" accept=".ogg, .mp3, .wav"/>
+					</label>
+					<div id="msgNoExt" class="error_msg notYet">
+						<i class="fa fa-times-circle"></i> Please, select an ogg, wav or mp3 file (located in the "sounds" directory).
+					</div>
+				</div>
+				<div class="alignMid" id="playSound">
+					<span>Play sound&nbsp;:</span>
+					<audio controls id="alarmSound">
+					  <source src="./sounds/alarm1.mp3" type="audio/mpeg" />
+					  Sorry, your browser does not support the audio element.
+					</audio>
+				</div> 
+			</fieldset> <!--Adjustable alarm-->
+		</form>
+	</section>
+	<footer>
+		<script type="text/javascript" src="./js/script.js" defer></script>
+		<noscript>
+			<small>My clock is powered by JavaScript... Please enable JS to make it work !</small>
+		</noscript>
+	</footer>
+</body>
+</html>

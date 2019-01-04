@@ -1,0 +1,199 @@
+@import url("reset.css");
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"); /* icons for error messages */
+@font-face{
+font-family: HVDCS;
+src: url(HVD_Comic_Serif_Pro.otf);}
+h1,h2,noscript,form,fieldset,legend{
+margin: 10px;
+padding: 10px;}
+html{
+background-image: url("../img/bg.png");
+background-repeat: no-repeat;
+background-color: white;}
+body{
+width: 780px;
+height: 34em;
+margin: 1em auto 0 auto;
+padding: 0.5em;
+position: relative;}
+form{
+border-radius: 0px 0px 8px 8px;
+border: 2px solid rgb(0, 0, 0);
+border-top: none;
+background-color: #FDF3E7;
+margin: 0 auto;
+padding: 0;
+height: 450px;
+width: 790px;}
+body.comics{
+font-family:"HVDCS";
+font-size: 12px;}
+div.alignMid label, div.alignMid  input, div.alignMid  select, div.alignMid  audio{
+vertical-align: middle;}
+h1{
+margin-top: 75px;
+margin-bottom: 0;
+margin-left: 0;
+border-radius: 8px;
+font-size: 2em;
+font-weight: bold;
+width: 500px;
+border: 2px solid rgb(0, 0, 0);
+background-color: #FDF3E7;}
+h2{
+margin: 100px 0 0 0;
+padding-right: 0;
+padding-left: 10px;
+font-size: 2em;
+border-radius: 8px 8px 0px 0px;
+border: 2px solid rgb(0, 0, 0);
+border-bottom: none;
+background-color: #FDF3E7;
+width: 780px;}
+div#clock,div#hours,div#minutes,div#seconds, div#wakeUp, div#glass{
+height: 120px;
+width: 120px;
+background-image: url('../img/clock.png');
+background-repeat: no-repeat;
+position: absolute;
+top: 36px;
+right: 18px;}
+div#clock, div#glass{
+border-radius: 8px;
+}
+div#glass{
+height: 180px;
+width: 140px;
+margin: -20px -10px;
+/*effet vitré */
+background: rgba(255, 161, 84, 0.05) none repeat scroll 0 0;
+border: 2px solid rgba(0, 0, 0, 0.6);
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.1) inset, 0 10px 20px rgba(255, 255, 255, 0.3) inset, 0 -15px 30px rgba(0, 0, 0, 0.3) inset;}
+p#clockAmPm{
+position: absolute;
+bottom: -1.2em;
+left: 3%;
+color: rgba(72,72,74,0.5);
+}
+p#alarmAmPm{
+position: absolute;
+bottom: -2.4em;
+left: 3%;
+color: rgba(0,38,255,0.5);
+font-weight: lighter;
+}
+body.comics div#clock{
+background-image: url('../img/clockcomics.png');}
+div#hours{
+background-position: -120px 0px;
+top: 0px;
+left: 0px;}
+div#minutes{
+background-position: -240px 0px;
+top: 0px;
+left: 0px;}
+div#seconds{
+background-position: -360px -0px;
+top: 0px;
+left: 0px;
+z-index: 1;}
+div#wakeUp{
+background-position: -480px 0px;
+top: 0px;
+left: 0px;
+z-index: 0;}
+form#commands a{
+background-image: url('../img/pauseplayreset.png');
+background-size: 50px 19px;
+background-repeat: no-repeat;
+margin-left: 1em;
+margin-right: 1em;
+display: inline-block;
+height: 19px;
+width: 16px;
+text-indent: 101%;
+white-space: nowrap;
+overflow: hidden;
+cursor: pointer;
+text-align: center;}
+body.comics form#commands a{
+background-image: url('../img/pauseplayresetcomics.png');}
+a#pause{
+background-position: 0px 0px;}
+a#play{
+background-position: -17px 0px;}
+a#reset{
+background-position: -34px 0px;}
+div.maxwidth{
+width: 716px;}
+div#setClock label, div#setAlarm label{
+margin-right: 0.5em;}
+div#setClock input, div#setAlarm input{
+width: 3em;
+margin-right: 0.3em;
+text-align: right;
+/*effet vitré */
+background: rgba(255, 161, 84, 0.05) none repeat scroll 0 0;
+border: 1px solid rgba(0, 0, 0, 0.5);
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.1) inset, 0 10px 20px rgba(255, 255, 255, 0.3) inset, 0 -15px 30px rgba(0, 0, 0, 0.3) inset;}
+div#setClock input:hover, div#setAlarm input:hover, div#setClock input:focus, div#setAlarm input:focus{
+background: white;
+border: 1px solid black;
+box-shadow: none;}
+span.viewTime{
+margin-right: 0.5em;}
+sup.notice{
+color: red;
+text-decoration: underline;
+cursor: pointer;
+display: none;}
+sup.changesNotApplied{
+display: inline;}
+fieldset{
+padding-top: 15px;
+padding-bottom: 15px;
+background-color: white;
+min-height: 3em;
+border: 2px solid rgba(0, 0, 0, 0.5);
+border-radius: 8px;
+float: left;
+}
+legend{
+margin: 0;
+padding: 0 1em;
+font-weight: bolder;}
+fieldset div{
+margin-top: 5px;}
+fieldset div.rows{
+margin: 1.5em auto;}
+noscript{
+position: absolute;
+top: 140px;
+left: 0;
+right: 0;
+bottom: 0;
+height: 34em;
+background-color: red;
+color: white;
+font-size: 24px;
+text-align: center;
+border: 2px solid rgba(0, 0, 0, 0.5);
+border-radius: 8px;}
+div#persAlarmSound{
+display: block;}
+div#persAlarmSound.disabled{
+display: none;}
+div#playSound{
+display: block;}
+div#playSound.disabled{
+display: none;}
+div.error_msg{
+margin: 10px 0px;
+padding:12px;
+color: #D8000C;
+background-color: #FFBABA;
+margin:10px 22px;
+vertical-align:middle;
+display: block;}
+div.error_msg.notYet{
+display: none;}
